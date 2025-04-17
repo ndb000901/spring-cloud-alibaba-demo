@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: svc-order
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 192.168.43.242:8848
+      config:
+        namespace: ${spring.profiles.active:dev}
+    openfeign:
+      client:
+        config:
+          svc-product:
+            read-timeout: 1000
+            connect-timeout: 1000
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 192.168.43.242:18088
+  config:
+    import: nacos:common.yml?group=svc-order
+server:
+  port: 31100
+logging:
+  level:
+    work.hello.svc.order.feign: info
+feign:
+  sentinel:
+    enabled: true
+
+    

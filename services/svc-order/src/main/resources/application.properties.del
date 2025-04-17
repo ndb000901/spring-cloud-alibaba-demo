@@ -1,0 +1,6 @@
+server.port=31100
+spring.application.name=svc-order
+
+spring.cloud.nacos.server-addr=192.168.43.242:8848
+
+spring.config.import=nacos:svc-order.properties
