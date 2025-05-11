@@ -17,6 +17,8 @@
         <module>services</module>
         <module>common</module>
         <module>seata-demo</module>
+        <module>services/alert-webhook</module>
+        <module>services/hls-auth</module>
     </modules>
     <packaging>pom</packaging>
     <url/>
